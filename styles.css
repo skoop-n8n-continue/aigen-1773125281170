@@ -53,6 +53,40 @@ p {
     color: var(--secondary-text);
     font-weight: 400;
     letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+
+.showcase {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.showcase-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+.showcase-item img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.showcase-item span {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .clock-container {
