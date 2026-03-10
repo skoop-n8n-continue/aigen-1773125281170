@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #00b7af;
+    --dark-bg: #10181f;
+    --light-text: #ffffff;
+    --secondary-text: #6a7071;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 180px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: 0 0 30px rgba(0, 183, 175, 0.3);
+}
+
+p {
+    font-size: 48px;
+    color: var(--secondary-text);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.clock-container {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    z-index: 10;
+}
+
+#clock {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--secondary-text);
+    letter-spacing: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background Animated Elements */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: float 20s infinite alternate ease-in-out;
+}
+
+.circle-1 {
+    width: 600px;
+    height: 600px;
+    background-color: var(--primary-color);
+    top: -100px;
+    left: -100px;
+}
+
+.circle-2 {
+    width: 800px;
+    height: 800px;
+    background-color: #0080ff;
+    bottom: -200px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.circle-3 {
+    width: 400px;
+    height: 400px;
+    background-color: #7000ff;
+    top: 50%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
+}
