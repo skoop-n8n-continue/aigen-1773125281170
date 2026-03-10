@@ -27,4 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
             circle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
         });
     });
+
+    // Image "Video" Slideshow Logic
+    const initVideoSlideshow = () => {
+        const containers = document.querySelectorAll('.screen-content');
+        
+        containers.forEach(container => {
+            const images = container.querySelectorAll('.video-image');
+            let currentIndex = 0;
+
+            const nextImage = () => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            };
+
+            // Cycle every 4 seconds for a "video-like" feel
+            setInterval(nextImage, 4000);
+        });
+    };
+
+    initVideoSlideshow();
 });

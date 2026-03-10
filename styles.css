@@ -72,13 +72,52 @@ p {
     backdrop-filter: blur(10px);
 }
 
-.showcase-item img {
+.screen-wrapper {
+    position: relative;
     width: 400px;
     height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
     margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.screen-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    opacity: 0.8;
+}
+
+.screen-content {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    background: #000;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.video-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1.1);
+    transition: opacity 1.5s ease-in-out, transform 5s linear;
+}
+
+.video-image.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .showcase-item span {
